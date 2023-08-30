@@ -3,15 +3,14 @@ Resources:
     Type: AWS::EC2::Instance
     Properties: 
       ImageId: "ami-051f7e7f6c2f40dc1"
-      KeyName: "Dev-key"
-      instancetype: "t2.micro"
+      KeyName: "Dev-keypair"
       BlockDeviceMappings: 
       - DeviceName: "/dev/sdm"
         Ebs: 
           VolumeType: "io1"
-          Iops: "8"
+          Iops: 100
           DeleteOnTermination: "false"
-          VolumeSize: "20"
+          VolumeSize: 20
       - DeviceName: "/dev/sdk"
         NoDevice: {}
       Tags: 
